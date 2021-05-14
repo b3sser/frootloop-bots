@@ -1,0 +1,33 @@
+NAME, QUOTES, usw. selbsterklärend
+CHOCOLATE und OATH nur wenn verfügbar
+ICON-URL durch vorheriges hochladen eines Bildes z.B. auf imgur, gyazo oder direkt in einen DC-Channel schicken und dann "Original anzeigen" klicken
+COLOUR bei GFL nach Star-Rating, bei Azur Lane nach Type, bei Other nach eigenem Ermessen
+
+@bot.command(name='NAME')
+async def NAMEquote(ctx, special='no'):
+    NAME_quotes_list = [
+        'QUOTE1',
+        'QUOTE2',
+    ]    
+    
+#	NAME_chocolate = [
+#        'CHOCOQUOTE1',
+#        'CHOCOQUOTE2',
+#    ]
+         
+    if special == 'oath':
+        quote = 'OATHQUOTE'
+#    elif special == 'chocolate':
+#        quote = random.choice(NAME_chocolate) ODER 'CHOCOLATEQUOTE'
+    else:
+        quote = random.choice(NAME_quotes_list)
+        
+    quoteembed = discord.Embed(
+        title = 'NAME:',
+        description = quote ,
+        colour = discord.Colour.COLOUR()
+    )
+    
+    quoteembed.set_thumbnail(url='ICON-URL')
+    
+    await ctx.send(embed=quoteembed)
